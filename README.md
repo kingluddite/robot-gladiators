@@ -56,3 +56,38 @@ Robot Gladiators
     - Don't worry—this isn't an error
     - The console evaluates every piece of code and attempts to return a result
     - But there is nothing to return for a variable, so it returns the value `undefined` by default
+
+
+## Functions
+### Function declaration
+* There are two methods to create a function in JavaScript:
+
+```
+// create function
+function fight() {
+  window.alert("Welcome to Robot Gladiators!");
+}
+// execute function
+fight();
+```
+
+### Function expression
+* This is when we create a function by assigning it to a variable
+
+```
+// create function
+var fight = function() {
+  window.alert("Welcome to Robot Gladiators!");
+};
+// execute function
+fight();
+```
+
+## Not using the `var` keyword
+* If there is no var keyword
+* We use `var` to create new variables, but we may want to update the value of a variable that already exists
+    - Using the `var` keyword would create a new variable inside the function, meaning that the variable we created at the top of the file and outside the function would be unaffected
+    - This is called `scoping a variable`
+*  We have different meanings to the left or right of an assignment operator
+    - Listing the variable on the left side means we'll store data to that variable
+    - Listing the variable on the right side means we'll use the actual value that variable holds at that moment
