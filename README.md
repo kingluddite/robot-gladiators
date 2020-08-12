@@ -47,3 +47,12 @@ Robot Gladiators
 * `window.alert()` - Consider what the word window might refer to in that piece of code
     - Also think about the `alert()` syntax and which programming concept it falls under
         + Does it store data or perform an action?
+
+## Browser dev tools
+* The console isn't part of the JavaScript language
+* It's another object like the window provided to us by the browser, which makes it a web API
+* The console object has its own set of functions and properties that interface with the browser's console window (in Chrome, it's the DevTools Console tab we just used)
+* When we create a variable or function in the DevTools Console and press Enter, it will often return a value of `undefined`
+    - Don't worry—this isn't an error
+    - The console evaluates every piece of code and attempts to return a result
+    - But there is nothing to return for a variable, so it returns the value `undefined` by default
