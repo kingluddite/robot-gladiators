@@ -13,6 +13,11 @@ const enemyAttack = 12;
 const fight = function() {
   console.log("Welcome to Robot Gladiators!");
 
+  const promptFight = window.prompt(
+    "Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."
+  );
+  console.log(promptFight);
+
   // Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
   enemyHealth = enemyHealth - playerAttack;
   console.log(
