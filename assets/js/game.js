@@ -31,9 +31,11 @@ const fight = function(enemyName) {
       }
     }
 
-    // battle code here
-    // remove enemy's health by subtracting the amount set in the playerAttack variable
-    enemyHealth -= playerAttack;
+    // generate random damage value based on player's attack power
+    let damage = randomNumber(playerAttack - 3, playerAttack);
+
+    enemyHealth = Math.max(0, enemyHealth - damage);
+
     console.log(`${playerName} attacked ${enemyName}. ${enemyName} now has ${enemyHealth} health remaining`);
 
     // check enemy's health
@@ -41,7 +43,7 @@ const fight = function(enemyName) {
       console.log(`${enemyName} has died!`);
 
       // award player money for winning
-      playerMoney += 20;
+      Math.max(0, playerMoney - 10);
 
       // leave while() loop since enemy is dead
       break;
@@ -50,7 +52,10 @@ const fight = function(enemyName) {
     }
 
     // remove players's health by subtracting the amount set in the enemyAttack variable
-    playerHealth -= enemyAttack;
+    damage = randomNumber(enemyAttack - 3, enemyAttack);
+
+    playerHealth = Math.max(0, playerHealth - damage);
+
     console.log(`${enemyName} attacked ${playerName}. ${playerName} now has ${playerHealth} health remaining.`);
 
     // check players's health
@@ -78,7 +83,7 @@ const startGame = function() {
       const pickedEnemyName = enemyNames[i];
 
       // reset enemyHealth before starting new fight
-      enemyHealth = 50;
+      enemyHealth = randomNumber(40, 60);
 
       // use debugger to pause script from running and check what's going on at that moment in the code
       //       debugger;
@@ -176,6 +181,12 @@ const shop = function() {
       shop();
       break;
   }
+};
+
+const randomNumber = function(min, max) {
+  const value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
 };
 
 // start game when page loads
